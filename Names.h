@@ -114,6 +114,7 @@ private:
 		if (ChunkIndex > NumChunks) return nullptr;
 		if (Index > MaxTotalElements) return nullptr;
 		if (!Chunk) return nullptr;
+		//0x8 for 64bits and 0x4 for 32bits
 		int offset = WithinChunkIndex * 0x8;
 		uintptr_t ptrAddress = *reinterpret_cast<uintptr_t*>(reinterpret_cast<unsigned char*>(Chunk) + offset);
 		ElementType* ItemPtr = reinterpret_cast<ElementType*>(ptrAddress);

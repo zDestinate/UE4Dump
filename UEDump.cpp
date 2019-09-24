@@ -5,6 +5,7 @@
 
 char* GetName(UObject* Object)
 {
+	//Set your own offset for name (In this case is 0x18)
 	DWORD NameIndex = *(PDWORD64)((DWORD64)Object + 0x18);
 
 	if (NameIndex < 0 || NameIndex > GNames->Num())
